@@ -1,0 +1,86 @@
+{% extends 'hospital_app/base.html' %}
+
+{% block title %}Appointment{% endblock %}
+
+{% load static %}
+
+{% block extra_css %}
+    <link rel="stylesheet" href="{% static 'hospital_app/css/appointment.css' %}">
+{% endblock %}
+
+{% block content %}
+
+    <h2>Appointment Form</h2>
+
+    <div id="appointment_form">
+        <form method="POST">
+            {% csrf_token %}
+            
+            <div class="form-group">
+                <label for="first_name">First Name :</label>
+                <input type="text" id="first_name" name="first_name" placeholder="Enter your First name" required>
+            </div>
+    
+            <div class="form-group">
+                <label for="last_name">Last Name :</label>
+                <input type="text" id="last_name" name="last_name" placeholder="Enter your Last name" required>
+            </div>
+    
+            <div class="form-group">
+                <label for="parent_name">Father/Mother Name :</label>
+                <input type="text" id="parent_name" name="parent_name" placeholder="Father/Mother name" required>
+            </div>
+    
+            <div class="form-group">
+                <label for="mobile_number">Mobile number :</label>
+                <input type="tel" id="mobile_number" name="mobile_number" placeholder="Enter your Mobile number" required>
+            </div>
+    
+            <div class="form-group">
+                <label for="email">Email :</label>
+                <input type="email" id="email" name="email" placeholder="Enter your Email" required>
+            </div>
+    
+            <div class="form-group">
+                <label for="location">From Location :</label>
+                <input type="text" id="location" name="location" placeholder="Enter your Home town" required>
+            </div>
+    
+            <div class="form-group">
+                <label for="appointment_date">Date of Appointment :</label>
+                <input type="date" id="appointment_date" name="appointment_date" required>
+            </div>
+            <div class="button">
+                <button type="submit">Submit</button>
+            </div>
+            
+        </form>
+    </div>
+    
+    {% if messages %}
+        {% for message in messages %}
+            {% if message.level == DEFAULT_MESSAGE_LEVELS.SUCCESS %}
+                <div class="popup">
+                    <img src="{% static 'hospital_app/images/tick.png' %}" alt="img">
+                    <h6 id="success">Thank You for Booking Appointment <br> Appointment booked successfully</h6>
+                    <button id="backButton">Back</button>
+                    <button id="homeButton" data-home-url="{% url 'home' %}">Home</button>
+                </div>
+            {% elif message.level == DEFAULT_MESSAGE_LEVELS.ERROR %}
+                <div class="popup">
+                    <img src="{% static 'hospital_app/images/close.png' %}" alt="img">
+                    <h6 id="error">Somthing went wrong <br> Check details once</h6>
+                    <button id="backButton">Back</button>
+                    <button id="homeButton" data-home-url="{% url 'home' %}">Home</button>
+                </div>
+            {% endif %}
+        {% endfor %}
+    {% endif %}
+
+    <a class="back_page" href="{% url 'home' %}">Back</a>
+
+    {% block extra_js %}
+        <script src="{% static 'hospital_app/js/appointment.js' %}"></script>
+    {% endblock %}
+
+{% endblock %}

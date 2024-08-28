@@ -1,0 +1,41 @@
+{% extends 'hospital_app/base.html' %}
+
+{% load static %}
+
+{% block title %} Home {% endblock %}
+
+{% block extra_css %}
+    <link rel="stylesheet" href="{% static 'hospital_app/css/home.css' %}">
+{% endblock %}
+
+{% block content %}
+    <div id="appointment">
+        <span id="banner">
+            <img src="{% static 'hospital_app/images/banner.jpg' %}" alt="banner">
+        </span>
+        <span id="take_appointment">
+            <h4>Take Appointment</h4>
+            <button id="appointment_button" class="aptn_btn" onclick="appointment()"> Click Here </button>
+        </span>
+    </div>
+    <div id="login_div">
+        <div class="login">
+            <img src="{% static 'hospital_app/images/admin.png' %}" alt="Admin img">
+            <span>Admin</span>
+            <button class="button" onclick="redirectTo('admin_login')">Login</button>
+        </div>
+        <div class="login">
+            <img src="{% static 'hospital_app/images/doctor.png' %}" alt="Doctor img">
+            <span>Doctor</span>
+            <button class="button" onclick="redirectTo('doctor_login')">Login</button>
+        </div>
+        <div class="login">
+            <img src="{% static 'hospital_app/images/patient.png' %}" alt="Patient img">
+            <span>Patient</span>
+            <button class="button" onclick="redirectTo('patient_login')">Login</button>
+        </div>
+    </div>
+
+    <script src="{% static 'hospital_app/js/home.js' %}"></script>
+
+{% endblock %}

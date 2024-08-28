@@ -1,0 +1,124 @@
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    background-color: #91AC9A;
+    text-align: center;
+}
+
+a {
+    color: #000000;
+    text-decoration: none;
+}
+
+
+.container {
+    height: 100vh;
+}
+
+.main-content {
+    display: flex;
+    flex-direction: column;
+}
+
+header {
+    color: rgb(0, 0, 0);
+    padding: 15px;
+    text-align: center;
+    font-weight: bolder;
+}
+
+nav {
+    padding: 10px;
+    display: flex;
+    justify-content: space-evenly;
+    backdrop-filter: blur(30px);
+    border: 1.5px solid rgba(255, 255, 255, 0.18);
+    box-shadow: 0px 0px 30px rgba(227, 228, 237, 0.37);
+}
+
+section {
+    flex: 1;
+    padding: 20px;
+}
+
+.button {
+    font-size: larger;
+}
+
+.views {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding: 20px;
+}
+
+.view {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #8FB8CA;
+    padding: 20px;
+    border-radius: 5px;
+    box-sizing: border-box;
+    width: 200px;
+    text-align: center;
+}
+
+.view img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 5px;
+}
+
+.view p {
+    margin: 10px 0;
+    font-weight: bold;
+}
+
+.view a {
+    margin-top: 10px;
+    text-decoration: none;
+    color: #000000;
+}
+
+.btn_view {
+    padding: 2px 10px;
+    border: 1px solid blue;
+    border-radius: 5px;
+    background-color: rgb(173, 216, 230);
+}
+
+.btn_view:hover {
+    color: white;
+    background-color: blue;
+    transform: translateY(-2px);
+    box-shadow: 2px 2px 15px #000000;
+}
+
+.log_btn {
+    display: flex;
+    justify-content: center;
+    margin: 10px;
+    position: relative;
+    bottom: 0;
+}
+
+.logout_button {
+    padding: 5px 10px;
+    background-color: rgb(173, 216, 230);
+    color: black;
+    padding: 5px 15px;
+    border-radius: 5px;
+    transition: all 0.3s ease-in-out;
+    border: 0;
+    font-size: 20px;
+}
+
+.logout_button:hover {
+    color: white;
+    background-color: blue;
+    box-shadow: 2px 2px 15px #000000;
+}

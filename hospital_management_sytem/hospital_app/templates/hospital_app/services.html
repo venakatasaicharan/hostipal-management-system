@@ -1,0 +1,23 @@
+{% extends 'hospital_app/base.html' %}
+
+{% load static %}
+
+{% block title %}Services{% endblock %}
+
+{% block extra_css %}
+    <link rel="stylesheet" href="{% static 'hospital_app/css/services.css' %}">
+{% endblock %}
+
+{% block content %}
+    <h2 class="txt">Our Services</h2>
+    <p class="txt">The services offered by the hospital...</p>
+    <p class="txt">
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Commodi nihil, dolorum totam veniam officia sint voluptate eveniet architecto! Perferendis omnis quibusdam perspiciatis deserunt alias illum esse molestiae debitis ab asperiores!
+        Doloribus, aliquam consectetur. Veritatis suscipit saepe iste sequi neque obcaecati omnis magni officiis provident ut eveniet accusantium, cumque dolorum doloribus consectetur harum nihil, quae ratione voluptatum. Dignissimos consequatur quo laborum?
+        Inventore voluptas saepe nesciunt rem error id omnis ipsam sint alias obcaecati molestiae ad ea ipsum ratione fuga consequatur adipisci minus exercitationem, quia blanditiis quos sapiente molestias. Quasi, cupiditate est.
+        Aut atque explicabo sint illum. Sint quo repellat quod dicta voluptas molestias dolor, id minima rem quis doloremque incidunt ipsum veritatis reiciendis, odit quibusdam, nihil vitae atque assumenda esse sit?
+    
+    </p>
+
+    <a class="back_page" href="{% url 'home' %}">Back</a>
+{% endblock %}

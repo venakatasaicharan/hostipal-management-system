@@ -1,0 +1,101 @@
+
+#appointment_form{
+    background-color: #8FB8CA;
+    padding: 30px 80px;
+    margin: 0 auto;
+    width: 40%;
+}
+
+
+.form-group {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 10px;
+}
+
+label {
+    width: 50%;
+    text-align: right;
+    padding-right: 10px;
+    margin-right: 3px;
+}
+
+input {
+    width: 40%;
+    box-sizing: border-box;
+    margin-right: 10%;
+    padding: 5px;
+    font-size: medium;
+    background-color: transparent;
+    outline: none;
+}
+
+.button {
+    display: flex;
+    justify-content: center;
+}
+
+button {
+    margin: 10px 0px;
+    background-color: lightblue;
+    color: black;
+    padding: 5px 15px;
+    border-radius: 5px;
+    transition: all 0.3s ease-in-out;
+    border: 0;
+    font-size: 20px;
+}
+button:hover {
+    color: white;
+    background-color: blue;
+    transform: translateY(-2px);
+    box-shadow: 2px 2px 15px #000000;
+}
+
+.back {
+    border: 1px solid red;
+    margin: 10px 0px;
+}
+
+#success{
+    color: green;
+}
+
+#error{
+    color: red;
+}
+
+.popup {
+    width: 400px;
+    background: #ffffff;
+    border-radius: 6px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    padding: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.9);
+}
+
+.popup img {
+    width: 100px;
+    margin-top: -50px;
+    border-radius: 50%;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.9);
+}
+
+.back_page {
+    border: 1px solid #CEDFDF;
+    margin: 10px 0px;
+    padding: 5px 10px;
+    border-radius: 5px;
+    color: rgb(0, 0, 0);
+}
+
+.back_page:hover {
+    color: white;
+    background-color: blue;
+    transform: translateY(-2px);
+    box-shadow: 2px 2px 15px #000000;
+}

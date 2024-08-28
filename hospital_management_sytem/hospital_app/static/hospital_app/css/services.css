@@ -1,0 +1,12 @@
+.txt{
+    text-align: justify;
+    padding: 5px 30px;
+}
+
+.back_page {
+    border: 1px solid #CEDFDF;
+    margin: 40px 0px;
+    padding: 5px 10px;
+    border-radius: 5px;
+    color: rgb(0, 0, 0);
+}

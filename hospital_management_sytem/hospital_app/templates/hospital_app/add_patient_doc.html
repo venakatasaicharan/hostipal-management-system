@@ -1,0 +1,71 @@
+{% extends 'hospital_app/doctor_page.html' %}
+
+{% load static %}
+
+{% block title %}Add Patient{% endblock %}
+
+{% block extra_css %}
+    <link rel="stylesheet" href="{% static 'hospital_app/css/add_doctor.css' %}">
+{% endblock %}
+
+{% block content %}
+    <h1>Add Patient Details</h1>
+    
+    <form action="" method="POST">
+        {% csrf_token %}
+        <div class="form_group">
+            <label for="first_name">First Name:</label>
+            <input type="text" id="first_name" name="first_name" placeholder="Enter first name"><br><br>
+        </div>
+        
+        <div class="form_group">
+            <label for="last_name">Last Name:</label><br>
+            <input type="text" id="last_name" name="last_name" placeholder="Enter last name"><br><br>
+        </div>
+
+        <div class="form_group">
+            <label for="dob">Date of Birth:</label><br>
+            <input type="date" id="dob" name="dob" placeholder="mm/dd/yyyy"><br><br>
+        </div>
+
+        <div class="form_group">
+            <label for="phone">Phone Number:</label><br>
+            <input type="text" id="phone" name="phone" placeholder="Enter mobile number"><br><br>
+        </div>
+
+        <div class="form_group">
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" placeholder="Enter email"><br><br>
+        </div>
+
+        <div class="form_group">
+            <label for="disease">Disease:</label>
+            <input type="text" id="disease" name="disease" placeholder="Enter disease"><br><br>
+        </div>
+
+        <div class="form_group">
+            <label for="bill">Bill:</label><br>
+            <input type="text" id="bill" name="bill" placeholder="Enter bill ammount"><br><br>
+        </div>
+
+        <div class="button">
+            <button type="submit" class="submit">Submit</button>
+        </div>
+
+    </form>
+
+    <a class="back_page" href="{% url 'doctor_page' %}">Back</a>
+
+    {% if messages %}
+    <div class="messages">
+        {% for message in messages %}
+            {% if message.level == DEFAULT_MESSAGE_LEVELS.SUCCESS %}
+                <h5 id="success">{{message}}</h5>
+            {% elif message.level == DEFAULT_MESSAGE_LEVELS.ERROR %}
+                <h5 id="error">{{message}}</h5>
+            {% endif %}
+        {% endfor %}
+    </div>
+    {% endif %}
+
+{% endblock %}

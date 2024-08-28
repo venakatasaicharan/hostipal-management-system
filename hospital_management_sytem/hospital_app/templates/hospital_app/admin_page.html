@@ -1,0 +1,62 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <link rel="stylesheet" href="{% static 'hospital_app/css/admin_page.css' %}">
+
+    {% block extra_css %} {% endblock %}
+
+    <title>{% block title %} Admin Page {% endblock %}</title>
+
+</head>
+<body>
+    <div class="container">
+
+        <header>
+            <h1>Admin Page</h1>
+        </header>
+
+        <nav>
+            <a href="{% url 'add_doctor' %}">Add Doctor</a>
+            <a href="{% url 'add_patient' %}">Add Patient</a>
+            <a href="{% url 'settings_admin' %}">Settings</a>
+        </nav>
+
+        <div class="main_content">
+            <section>
+                {% block content %}
+                <h2>Welcome Admin</h2>
+                <div class="views">
+                    <div class="view">
+                        <img src="{% static 'hospital_app/images/appointment.png' %}" alt="Appointments">
+                        <p>Appointments</p>
+                        <a class="btn_view" href="{% url 'show_apt' %}">View</a>
+                    </div>
+                    <div class="view">
+                        <img src="{% static 'hospital_app/images/adddoctor.png' %}" alt="Doctors">
+                        <p>Doctors</p>
+                        <a class="btn_view" href="{% url 'show_doc' %}">View</a>
+                    </div>
+                    <div class="view">
+                        <img src="{% static 'hospital_app/images/addpatient.png' %}" alt="Patients">
+                        <p>Patients</p>
+                        <a class="btn_view" href="{% url 'show_pnt' %}">View</a>
+                    </div>
+                </div>
+                {% endblock %}
+            </section>
+        </div>
+        <div class="log_btn">
+            <button class="logout_button" onclick="confirmLogout()">Log out</button>
+        </div>
+    </div>
+
+    <script src="{% static 'hospital_app/js/admin_page.js' %}"></script>
+    
+</body>
+</html>

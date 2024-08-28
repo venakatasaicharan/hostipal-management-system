@@ -1,0 +1,59 @@
+{% extends 'hospital_app/patient_page.html' %}
+
+{% load static %}
+
+{% block extra_css %}
+    <link rel="stylesheet" href="{% static 'hospital_app/css/patient_details.css' %}">
+{% endblock %}
+{% block title %}Patient Details {% endblock %}
+
+{% block content %}
+<div class="table">
+    {% if pnt %}
+        {% for dt in pnt %}
+        <table class="table">
+            <tr>
+                <th>Patient ID</th>
+                <td id="patient_id">{{ dt.patient_id }}</td>
+            </tr>
+            <tr>
+                <th>First Name</th>
+                <td id="first_name">{{ dt.first_name }}</td>
+            </tr>
+            <tr>
+                <th>Last Name</th>
+                <td id="last_name">{{ dt.last_name }}</td>
+            </tr>
+            <tr>
+                <th>Date of Birth</th>
+                <td id="date_of_birth">{{ dt.date_of_birth }}</td>
+            </tr>
+            <tr>
+                <th>Mobile Number</th>
+                <td id="mobile_number">{{ dt.mobile_number }}</td>
+            </tr>
+            <tr>
+                <th>Email</th>
+                <td id="email">{{ dt.email }}</td>
+            </tr>
+            <tr>
+                <th>Disease</th>
+                <td id="disease">{{ dt.disease }}</td>
+            </tr>
+
+            <tr>
+                <th>Bill</th>
+                <td id="bill">{{ dt.bill }}</td>
+            </tr>
+        </table>
+</div>
+        <button id="downloadBtn" class="back">Download as PDF</button>
+        {% endfor %}
+    {% else %}
+        <p>No patient details available.</p>
+    {% endif %}
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.4.0/jspdf.umd.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf-autotable/3.5.23/jspdf.plugin.autotable.min.js"></script>
+    <script src="{% static 'hospital_app/js/download_patient_details.js' %}"></script>
+{% endblock %}

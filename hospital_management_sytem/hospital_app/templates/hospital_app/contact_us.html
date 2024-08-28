@@ -1,0 +1,26 @@
+{% extends 'hospital_app/base.html' %}
+
+{% load static %}
+
+{% block title %}Contact Us{% endblock %}
+
+{% block extra_css %}
+    <link rel="stylesheet" href="{% static 'hospital_app/css/services.css' %}">
+{% endblock %}
+
+{% block content %}
+    <h2 class="txt">Contact Us</h2>
+    <p class="txt">Details about how to contact the hospital...</p>
+
+    <p>
+        Contact number : 9876543210 <br><br>
+        Email us : hospital@gamil.com <br><br>
+
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<u>Branches</u> <br><br>
+        Bangaluru : 9632587410 <br><br>
+        Mysur : 9510236487 <br><br>
+        Kolar : 8965230147
+    </p>
+
+    <a class="back_page" href="{% url 'home' %}">Back</a>
+{% endblock %}

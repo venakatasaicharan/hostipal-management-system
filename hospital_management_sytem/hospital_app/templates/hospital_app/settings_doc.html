@@ -1,0 +1,49 @@
+{% extends 'hospital_app/doctor_page.html' %}
+
+{% load static %}
+
+{% block extra_css %}
+    <link rel="stylesheet" href="{% static 'hospital_app/css/add_doctor.css' %}">
+{% endblock %}
+
+{% block title %} Settings {% endblock %}
+
+{% block content %}
+    <div class="form">
+        <form method="POST" >
+            {% csrf_token %}
+            <div class="form_group">
+                <label for="doc_id" class="label_form">Username : </label>
+                <input type="text" id="doc_id" name="doc_id" placeholder="Enter the ID" required> 
+            </div>
+
+            <div class="form_group">
+                <label for="password" class="label_form">Password : </label>
+                <input type="password" id="password" name="password" placeholder="Enter the Password" required>
+            </div>
+
+            <div class="form_group">
+                <label for="re_enter_password" class="label_form">Re-enter Password : </label>
+                <input type="password" id="re_enter_password" name="re_enter_password" placeholder="Re_enter the Password" required>    
+            </div>
+
+            <div class="button">
+                <button type="submit" class="submit">Change Password</button>
+            </div>
+        </form>
+    </div>
+
+    {% if messages %}
+    <div class="messages">
+        {% for message in messages %}
+            {% if message.level == DEFAULT_MESSAGE_LEVELS.SUCCESS %}
+                <h5 id="success">{{message}}</h5>
+            {% elif message.level == DEFAULT_MESSAGE_LEVELS.ERROR %}
+                <h5 id="error">{{message}}</h5>
+            {% endif %}
+        {% endfor %}
+    </div>
+    {% endif %}
+
+    <a class="back_page" href="{% url 'doctor_page' %}">Back</a>
+{% endblock %}

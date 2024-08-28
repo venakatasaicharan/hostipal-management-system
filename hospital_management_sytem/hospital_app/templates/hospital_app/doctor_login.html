@@ -1,0 +1,41 @@
+{% extends 'hospital_app/base.html' %}
+
+{% load static %}
+
+{% block title %}Doctor Login{% endblock %}
+
+{% block extra_css %}
+    <link rel="stylesheet" href="{% static 'hospital_app/css/login.css' %}">
+{% endblock %}
+
+{% block content %}
+    <div class="login_form">
+        <h2>Doctor Login</h2>
+
+        <form method="POST">
+            {% csrf_token %}
+
+            <label for="username">Doctor Id :</label> <br>
+            <input type="text" id="username" name="username" placeholder="Enter Doctor Id" required> <br>
+
+            <label for="password">Password :</label> <br>
+            <input type="password" id="password" name="password" placeholder="Enter Password" required> <br>
+
+            <div class="btn_div">
+                <button type="submit" class="btn">Login</button>
+            </div>
+        </form>
+        {% if messages %}
+            <div class="messages">
+                {% for message in messages %}
+                    {% if message.level == DEFAULT_MESSAGE_LEVELS.SUCCESS %}
+                        <h5 id="success">{{message}}</h5>
+                    {% elif message.level == DEFAULT_MESSAGE_LEVELS.ERROR %}
+                        <h5 id="error">{{message}}</h5>
+                    {% endif %}
+                {% endfor %}
+            </div>
+        {% endif %}
+    </div>
+    <a class="back" href="{% url 'home' %}">Back</a>
+{% endblock %}
